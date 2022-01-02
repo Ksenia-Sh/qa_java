@@ -16,22 +16,12 @@ import java.util.List;
         @Mock
         IFeline feline;
 
-        @Test
-        public void doesHaveManeMale() throws Exception {
-            Lion lion = new Lion(this.feline,"Самец");
-            boolean haveMane = lion.doesHaveMane();
-            assertEquals(true, haveMane);
-        }
-        @Test
-        public void doesHaveManeFemale() throws Exception {
-            Lion lion = new Lion(this.feline,"Самка");
-            boolean haveMane = lion.doesHaveMane();
-            assertEquals(false, haveMane);
-        }
+
         @Test(expected = Exception.class)
         public void doesHaveManeException() throws Exception {
             new Lion(this.feline,"Лось");
         }
+
         @Test
         public void getKittens() throws Exception {
             Lion lion = new Lion(feline,"Самка");
